@@ -1,4 +1,5 @@
 # https://github.com/smoqadam/PyFladesk
+from pyfladesk import init_gui
 
 import os
 from os import listdir
@@ -236,4 +237,15 @@ def apply():
     return render_template('apply.html', prediction_result = prediction_result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    if 'web' in sys.argv:
+        if 'debug' in sys.argv:
+            app.run(debug=True)
+        else:
+            port = 5000
+            url = "http://127.0.0.1:{0}".format(port)
+            threading.Timer(1.25, lambda: webbrowser.open(url) ).start()
+            app.run(debug=False)
+    elif 'gui' in sys.argv:
+        init_gui(app, window_title="AnaLazy")
+    else:
+        init_gui(app, window_title="AnaLazy")

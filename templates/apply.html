@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AnaLazy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">AnaLazy</h1>
+            <p class="lead">Apply your trained model</p>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="a group">
+                <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for( 'trainer') }}';">Adjust training parameters</button>
+            </div>
+            </div> <br>
+        </div>
+    </div>
+
+    <div class="container" style="display: flex; height: 100px;">
+        <div style="width: 50%;">
+            <div class="model_section_training_params" style="margin-left:0%;margin-right:5%">
+                <form action="{{ url_for('apply') }}" method="post">
+                    <div class="form-group">
+                    <label for="prediction_features">Enter prediction features as [[x1,x2,x3],...,[x1,x2,x3]], namely a 2D array</label>
+                    <input type="text" class="form-control" name="prediction_features" placeholder="">
+                    </div>
+        
+                    
+        
+                    <button type="submit" name="prediction_features_submit" value="submit" class="btn btn-primary">predict</button>
+                </form>
+
+                <br>
+
+                {% if prediction_result != None %}
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Features</th>
+                        <th scope="col">Prediction</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for set in prediction_result %}
+                            <tr>
+                                <td scope="row">{{ set.0 }}</td>
+                                <td>{{ set.1 }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+        <div style="flex-grow: 1;">
+            <div class="training_params" style="margin-left:5%;margin-right:0%">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

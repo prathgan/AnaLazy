@@ -4,6 +4,9 @@ from pyfladesk import init_gui
 import os
 from os import listdir
 from os.path import isfile, join
+import sys
+
+import random, threading, webbrowser
 
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_session import Session

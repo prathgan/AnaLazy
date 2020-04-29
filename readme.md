@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-
+### Running
 Navigate in a terminal to the root of the folder with the AnaLazy app code.
 
 To run AnaLazy in the standard configuration (GUI will automatically open)
@@ -28,6 +28,11 @@ To run AnaLazy in the debug web configuration (hot reloading, no automatic page 
 ```bash
 python index.py web debug
 ```
+### Using
+![Upload Page](demo_images/upload.png)
+![Data Selection Page](demo_images/data_select.png)
+![Training Parameters Page](demo_images/training_params.png)
+![Model Application Page](demo_images/apply.png)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

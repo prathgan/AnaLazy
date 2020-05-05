@@ -252,4 +252,4 @@ if __name__ == '__main__':
     elif 'gui' in sys.argv:
         init_gui(app, window_title="AnaLazy")
     else:
-        init_gui(app, window_title="AnaLazy")
+        init_gui(app, window_title="AnaLazy", width=1000, height=800)

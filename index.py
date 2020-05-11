@@ -48,8 +48,11 @@ app.config.update(
 
 dropzone = Dropzone(app)
 
-
 @app.route('/', methods=['POST', 'GET'])
+def home():
+    return render_template('home.html')
+
+@app.route('/upload', methods=['POST', 'GET'])
 def upload():
     path = "uploads/"
     files = [f for f in listdir(path) if isfile(join(path, f))]

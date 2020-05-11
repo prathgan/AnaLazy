@@ -59,8 +59,7 @@ def home():
 def upload():
     files = upload_fns.get_file_list()
     if request.method == 'POST':
-        f = request.files.get('file')
-        f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
+        upload_fns.save_file(request, app.config['UPLOADED_PATH'])
     else:
         return render_template('upload.html',filelist=files)
 

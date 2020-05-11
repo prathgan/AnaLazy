@@ -8,3 +8,7 @@ def get_file_list():
     files = [f for f in listdir(path) if isfile(join(path, f))]
     files.remove('.DS_Store')
     return files
+
+def save_file(request, path):
+    f = request.files.get('file')
+    f.save(os.path.join(path, f.filename))

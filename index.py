@@ -26,6 +26,9 @@ import currency
 import uniqueness
 import utilities
 
+# import page-based functions
+import upload_fns
+
 #import ML models
 from sklearn.neural_network import MLPClassifier
 from sklearn.neural_network import MLPRegressor

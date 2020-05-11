@@ -243,6 +243,10 @@ def apply():
 
     return render_template('apply.html', prediction_result = prediction_result)
 
+@app.route('/models')
+def models():
+    return "store trained models here"
+
 if __name__ == '__main__':
     if 'web' in sys.argv:
         if 'debug' in sys.argv:

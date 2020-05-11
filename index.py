@@ -129,9 +129,6 @@ def trainer():
 
     show_params_selection = False
 
-    if request.form.get('reselect_params') is not None:
-        show_params_selection = True
-
     if request.form.get('model_submit') is not None:
         for key in request.form.keys():
             if not key == 'model_submit':
@@ -153,7 +150,7 @@ def trainer():
     
     return render_template('trainer.html', feature_names = session['feature_names'],\
         selected_label = session['selected_label'], model_selection = session['model_selection'],\
-        show_params_selection = True)
+        show_params_selection = show_params_selection)
 
 @app.route('/training', methods=['POST', 'GET'])
 def training():

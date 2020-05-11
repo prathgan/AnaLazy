@@ -57,9 +57,7 @@ def home():
 
 @app.route('/upload', methods=['POST', 'GET'])
 def upload():
-    path = "uploads/"
-    files = [f for f in listdir(path) if isfile(join(path, f))]
-    files.remove('.DS_Store')
+    files = upload_fns.get_file_list()
     if request.method == 'POST':
         f = request.files.get('file')
         f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))

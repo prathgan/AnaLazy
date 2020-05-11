@@ -52,8 +52,37 @@
                     <div class="card-body">
                         <h5 class="card-title">Train</h5>
                         <p class="card-text">
-                            Train a new predictive model using data which has already been uploaded. You will be able 
-                            to select features and labels from the column headers of the data, and then you can select
+                            Train a new predictive model using uploaded data. You will be able 
+                            to select features and labels from the column headers of the data,
+                            the specific model type you'd like to train and set all relevant parameters.
+                        </p>
+                        <a href="{{ url_for( 'trainer') }}" class="btn btn-primary">Train a Model</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Models</h5>
+                        <p class="card-text">
+                            View all of the models which you have already trained and use them to
+                            make predictions with unseen data. Either make predictions off individual 
+                            sets of features or upload an unlabeled spreadsheet with many feature sets.
+                        </p>
+                        <a href="{{ url_for( 'models') }}" class="btn btn-primary">View Models</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Train</h5>
+                        <p class="card-text">
+                            Train a new predictive model using uploaded data. You will be able 
+                            to select features and labels from the column headers of the data,
                             the specific model type you'd like to train and set all relevant parameters.
                         </p>
                         <a href="{{ url_for( 'trainer') }}" class="btn btn-primary">Train a Model</a>

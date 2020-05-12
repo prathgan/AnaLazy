@@ -65,7 +65,12 @@ def upload():
 
 @app.route('/train', methods=['POST', 'GET'])
 def train():
-    return render_template('train.html')
+    files = upload_fns.get_file_list()
+    session['filechoice'] = None
+    session['feature_names'] = None
+    session['selected_label'] = None
+    session['label_options'] = None
+    return render_template('train.html', filelist=files)
 
 @app.route('/datadash_init')
 def dashboard_init():

@@ -62,6 +62,10 @@ def upload():
     files = upload_fns.get_file_list()
     return render_template('upload.html',filelist=files)
 
+@app.route('/train', methods=['POST', 'GET'])
+def train():
+    return render_template('train.html')
+
 @app.route('/datadash_init')
 def dashboard_init():
     path = "uploads/"

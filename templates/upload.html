@@ -45,11 +45,13 @@
             {% for file in filelist %}
               <li class="list-group-item">{{file}}</li>
             {% endfor %}
-            </ul>
-          </div>
-          <div class="btn-group mr-2" role="group" aria-label="a group">
-            <button type="button" class="btn btn-success" onclick="window.location.href='{{ url_for( 'dashboard_init') }}';">Done Uploading Data</button>
-          </div>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <h5>Upload new data sets:</h5> <br>
+          {{ dropzone.create(action='upload') }}
+          {{ dropzone.load_js() }}
+          {{ dropzone.config() }}
         </div>
       </div>
     </div>

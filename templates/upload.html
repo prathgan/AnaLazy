@@ -48,7 +48,12 @@
           </ul>
         </div>
         <div class="col-sm-6">
-          <h5>Upload new data sets:</h5> <br>
+          <h5>Upload new data sets (only <code>.csv</code> files will process):</h5> <br>
+          {% if warning == True %}
+            <div class="alert alert-warning" role="alert">
+              Please make sure it is a .csv file
+            </div>
+          {% endif %}
           {{ dropzone.create(action='upload') }}
           {{ dropzone.load_js() }}
           {{ dropzone.config() }}

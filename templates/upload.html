@@ -7,13 +7,41 @@
     {{ dropzone.style('border: 2px dashed #0087F7; margin-right: 10%; margin-left: 10%; min-height: 400px;') }}
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">AnaLazy</h1>
-        <p class="lead">Upload your datasets (in .csv form please!) Currently, you've uploaded:</p>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div class="btn-group mr-2" role="group" aria-label="a group">
-            <ul class="list-group list-group-horizontal">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{{ url_for( 'home') }}">AnaLazy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for( 'home') }}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for( 'upload') }}">Upload</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for( 'trainer') }}">Train</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for( 'models') }}">Models</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <h1 class="display-4">Upload</h1>
+    </div>
+
+    <br>
+
+    <div id="ui_grid" style="margin-left:5%;margin-right:5%">
+      <div class="row">
+        <div class="col-sm-6">
+          <h5>Here are the data sets you've already uploaded:</h5> <br>
+          <ul class="list-group">
             {% for file in filelist %}
               <li class="list-group-item">{{file}}</li>
             {% endfor %}

@@ -11,7 +11,7 @@ def get_file_list():
 
 def save_file(request, path):
     f = request.files.get('file')
-    if f.filename[-3]!='csv':
+    if str(f.filename[-3:]) != 'csv':
         return True
     f.save(os.path.join(path, f.filename))
     return False

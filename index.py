@@ -57,11 +57,10 @@ def home():
 
 @app.route('/upload', methods=['POST', 'GET'])
 def upload():
-    files = upload_fns.get_file_list()
     if request.method == 'POST':
         upload_fns.save_file(request, app.config['UPLOADED_PATH'])
-    else:
-        return render_template('upload.html',filelist=files)
+    files = upload_fns.get_file_list()
+    return render_template('upload.html',filelist=files)
 
 @app.route('/datadash_init')
 def dashboard_init():

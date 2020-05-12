@@ -63,14 +63,23 @@ def upload():
     files = upload_fns.get_file_list()
     return render_template('upload.html',filelist=files, warning=warning)
 
+"""
 @app.route('/train', methods=['POST', 'GET'])
 def train():
     files = upload_fns.get_file_list()
-    session['filechoice'] = None
-    session['feature_names'] = None
-    session['selected_label'] = None
-    session['label_options'] = None
-    return render_template('train.html', filelist=files)
+
+    try:
+        temp = session['filechoice']
+    except:
+        session['filechoice'] = None
+        session['feature_names'] = None
+        session['selected_label'] = None
+        session['label_options'] = None
+
+    filechoice = request.form.get('filechoice')
+
+    return render_template('train.html', filelist=files, filepick=filechoice)
+"""
 
 @app.route('/datadash_init')
 def dashboard_init():
@@ -83,8 +92,8 @@ def dashboard_init():
     session['label_options'] = None
     return render_template('dashboard.html', filelist = files)
 
-@app.route('/datadash', methods=['POST', 'GET'])
-def datadash():
+@app.route('/train', methods=['POST', 'GET'])
+def train():
 
     files = None
     filepick = None

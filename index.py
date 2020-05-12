@@ -57,6 +57,7 @@ def home():
 
 @app.route('/upload', methods=['POST', 'GET'])
 def upload():
+    warning=None
     if request.method == 'POST':
         upload_fns.save_file(request, app.config['UPLOADED_PATH'])
     files = upload_fns.get_file_list()

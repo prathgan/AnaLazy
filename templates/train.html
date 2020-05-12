@@ -33,8 +33,6 @@
       <h1 class="display-4">Train</h1>
     </div>
 
-    <br>
-
     <div id="ui" style="margin-left:5%;margin-right:5%">
         <div id="file_select_div">
             <h5>Choose the data set you'd like to work with</h5>
@@ -43,20 +41,20 @@
                     {% if file == filepick %}
                     {% if warning == True %}
                         <div class="btn-group mr-2" role="group" aria-label="a group">
-                        <form action="{{ url_for('datadash') }}" method="post">
+                        <form action="{{ url_for('train') }}" method="post">
                             <button type="submit" name="filechoice" value="{{ file }}" class="btn btn-warning">{{ file }}</button>
                         </form>
                         </div>
                     {% else %}
                     <div class="btn-group mr-2" role="group" aria-label="a group">
-                        <form action="{{ url_for('datadash') }}" method="post">
+                        <form action="{{ url_for('train') }}" method="post">
                         <button type="submit" name="filechoice" value="{{ file }}" class="btn btn-success">{{ file }}</button>
                         </form>
                     </div>
                     {% endif %}
                     {% else %}
                     <div class="btn-group mr-2" role="group" aria-label="a group">
-                        <form action="{{ url_for('datadash') }}" method="post">
+                        <form action="{{ url_for('train') }}" method="post">
                         <button type="submit" name="filechoice" value="{{ file }}" class="btn btn-primary">{{ file }}</button>
                         </form>
                     </div>

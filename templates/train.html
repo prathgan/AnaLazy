@@ -155,7 +155,7 @@
             <div class="card-body">
               <h5 class="card-title">4. Choose Model</h5>
               {% if selected_label != None %}
-                <form action="{{ url_for('trainer') }}" method="post">
+                <form action="{{ url_for('train') }}" method="post">
                   <ul class="list-group list-group">
                     <li class="list-group-item">
                       {% if model_selection == 'MLP Neural Network' %}

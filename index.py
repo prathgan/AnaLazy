@@ -19,12 +19,12 @@ from process_dash_posts import process_post
 from helpers import get_non_features
 
 # import data quality analysis functions
-import accuracy
-import completeness
-import consistency
-import currency
-import uniqueness
-import utilities
+import data_quality.accuracy
+import data_quality.completeness
+import data_quality.consistency
+import data_quality.currency
+import data_quality.uniqueness
+import data_quality.utilities
 
 # import page-based functions
 import upload_fns

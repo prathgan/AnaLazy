@@ -24,7 +24,8 @@ import data_quality.uniqueness
 import data_quality.utilities
 
 # import page-based functions
-import page_fns
+from page_fns import upload_fns
+from page_fns import train_fns
 
 #import ML models
 from sklearn.neural_network import MLPClassifier
@@ -56,8 +57,8 @@ def home():
 def upload():
     warning=None
     if request.method == 'POST':
-        warning = page_fns.upload_fns.save_file(request, app.config['UPLOADED_PATH'])
-    files = page_fns.upload_fns.get_file_list()
+        warning = upload_fns.save_file(request, app.config['UPLOADED_PATH'])
+    files = upload_fns.get_file_list()
     return render_template('upload.html',filelist=files, warning=warning)
 
 @app.route('/train', methods=['POST', 'GET'])
@@ -68,21 +69,21 @@ def train():
         if session['filechoice'] != None:
             pass
     except:
-        page_fns.train_fns.init_vars()
-        return render_template('train.html', filelist=page_fns.upload_fns.get_file_list(), feature_names = None, selected_label = None)
+        train_fns.init_vars()
+        return render_template('train.html', filelist=upload_fns.get_file_list(), feature_names = None, selected_label = None)
 
     if request.form.get('filechoice') != None:
-        page_fns.train_fns.process_filechoice(request)
+        train_fns.process_filechoice(request)
 
     if request.form.get('features_submit') is not None:
-        page_fns.train_fns.select_features(request)
+        train_fns.select_features(request)
     
     if request.form.get('label_submit') is not None:
-        session['selected_label'] = page_fns.train_fns.get_selected_label(request)
+        session['selected_label'] = train_fns.get_selected_label(request)
 
     
     
-    return render_template('train.html', filelist = page_fns.upload_fns.get_file_list(), filechoice=session['filechoice'],\
+    return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
         column_headers = session['column_headers'], feature_names = session['feature_names'], \
         selected_label = session['selected_label'], label_options = session['label_options'])
 

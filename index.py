@@ -16,7 +16,6 @@ import pandas
 import sklearn
 
 from process_dash_posts import process_post
-from helpers import get_non_features
 
 # import data quality analysis functions
 import data_quality.accuracy

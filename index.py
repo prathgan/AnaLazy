@@ -150,7 +150,7 @@ def train_dep():
         column_headers = session['column_headers']
         
 
-    return render_template('dashboard.html', filelist = files, filepick = filechoice, \
+    return render_template('train.html', filelist = files, filepick = filechoice, \
         warning = warning, column_headers = column_headers, feature_names = session['feature_names'], \
         label_options = session['label_options'], selected_label = session['selected_label'])
 

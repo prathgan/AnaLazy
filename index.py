@@ -68,7 +68,10 @@ def upload():
 def train():
     print(request.form)
     if request.form.get('filechoice') != None:
-        session['filechoice'] = request.form.get('filechoice')
+        train_fns.process_filechoice(request)
+
+    if request.form.get('features_submit') is not None:
+        train_fns.select_features(request)
     
     return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'])
 

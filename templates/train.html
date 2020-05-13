@@ -115,15 +115,50 @@
               <h5 class="card-title">3. Choose Target</h5>
               <form action="{{ url_for('train') }}" method="post">
                 <ul class="list-group list-group">
-                  {% for label_name in label_options %}
-                  <li class="list-group-item">
-                    {% if selected_label == None %}
-                      <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label">
-                        <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
-                      </div>
-                    {% else %}
-                      {% if label_name == selected_label %}
+                  {% if label_options != None %}
+                    {% for label_name in label_options %}
+                      <li class="list-group-item">
+                        {% if selected_label == None %}
+                          <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label">
+                            <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
+                          </div>
+                        {% else %}
+                          {% if label_name == selected_label %}
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label" checked>
+                              <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
+                            </div>
+                          {% else %}
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label">
+                              <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
+                            </div>
+                          {% endif %}
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                  <br>
+                  {% if selected_label == None %}
+                    <button type="submit" name="label_submit" value="submit" class="btn btn-primary">set label</button>
+                  {% else %}
+                    <button type="submit" name="label_submit" value="submit" class="btn btn-success">set label</button>
+                  {% endif %}
+                {% endif %}
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">4. Choose Model</h5>
+              {% if selected_label != None %}
+                <form action="{{ url_for('trainer') }}" method="post">
+                  <ul class="list-group list-group">
+                    <li class="list-group-item">
+                      {% if model_selection == 'MLP Neural Network' %}
                         <div class="custom-control custom-radio">
                           <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label" checked>
                           <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>

@@ -96,6 +96,8 @@ def dashboard_init():
 @app.route('/train', methods=['POST', 'GET'])
 def train():
 
+    print(session)
+
     files = None
     filepick = None
     warning = False

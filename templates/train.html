@@ -94,10 +94,10 @@
                   </li>
                   {% endfor %}
                 </ul> <br>
-                {% if feature_names == None %}
-                  <button type="submit" name="features_submit" value="submit" class="btn btn-warning">set features</button>
+                {% if feature_names != None %}
+                  <button type="submit" name="features_submit" value="submit" class="btn btn-success">set features</button>
                 {% else %}
-                  <button type="submit" name="features_submit" value="submit" class="btn btn-success">re-set features</button>
+                  <button type="submit" name="features_submit" value="submit" class="btn btn-primary">set features</button>
                 {% endif %}
               </form>
             </div>

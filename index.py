@@ -131,11 +131,8 @@ def train_dep():
         session['label_options'] = label_options
 
     if request.form.get('label_submit') is not None:
-        for key in request.form.keys():
-            if not key == 'label_submit':
-                selected_label = key[:-6]
-        session['selected_label'] = selected_label
-        return redirect(url_for('trainer'))
+        session['selected_label'] = train_fns.get_selected_label(request)
+        pass
 
     path = "uploads/"
     files = [f for f in listdir(path) if isfile(join(path, f))]

@@ -78,7 +78,7 @@ def train():
         return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
         column_headers = session['column_headers'], feature_names = session['feature_names'])
     except:
-        return render_template('train.html', filelist = upload_fns.get_file_list(), feature_names = None)
+        return render_template('train.html', filelist = upload_fns.get_file_list(), feature_names = None, column_headers=None)
 
 """
 @app.route('/train', methods=['POST', 'GET'])

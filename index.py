@@ -15,8 +15,6 @@ from flask_dropzone import Dropzone
 import pandas
 import sklearn
 
-from process_dash_posts import process_post
-
 # import data quality analysis functions
 import data_quality.accuracy
 import data_quality.completeness

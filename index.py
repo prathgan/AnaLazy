@@ -73,7 +73,11 @@ def train():
     if request.form.get('features_submit') is not None:
         train_fns.select_features(request)
     
-    return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'])
+    try:
+        return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
+        column_headers = session['column_headers'], feature_names = session['feature_names'])
+    except:
+        return render_template('train.html', filelist = upload_fns.get_file_list(), feature_names = None)
 
 """
 @app.route('/train', methods=['POST', 'GET'])

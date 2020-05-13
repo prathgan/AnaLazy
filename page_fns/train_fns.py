@@ -1,6 +1,5 @@
 from flask import session
 import pandas
-from helpers import get_non_features
 
 def process_filechoice(request):
     session['filechoice'] = request.form.get('filechoice')

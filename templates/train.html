@@ -42,7 +42,7 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Choose Data</h5>
+              <h5 class="card-title">1. Choose Data</h5>
               <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="">
                 {% for file in filelist %}
                   {% if file == filechoice %}
@@ -67,7 +67,7 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Choose Features</h5>
+              <h5 class="card-title">2. Choose Features</h5>
               <form action="{{ url_for('train') }}" method="post">
                 <ul class="list-group list-group">
                   {% for header in column_headers %}
@@ -122,13 +122,8 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Train</h5>
-                <p class="card-text">
-                  Train a new predictive model using uploaded data. You will be able 
-                  to select features and labels from the column headers of the data,
-                  the specific model type you'd like to train and set all relevant parameters.
-                </p>
-              <a href="{{ url_for( 'train') }}" class="btn btn-primary">Train a Model</a>
+              <h5 class="card-title">4. Set Parameters</h5>
+              
             </div>
           </div>
         </div>

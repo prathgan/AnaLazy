@@ -24,8 +24,7 @@ import data_quality.uniqueness
 import data_quality.utilities
 
 # import page-based functions
-import page_fns.upload_fns
-import page_fns.train_fns
+import page_fns
 
 #import ML models
 from sklearn.neural_network import MLPClassifier

@@ -86,8 +86,10 @@ def train():
         selected_label = session['selected_label'], label_options = session['label_options'])
     """
     except:
-        return render_template('train.html', filelist = upload_fns.get_file_list(), feature_names = None, column_headers=None)
+        print("initial")
+        return render_template('train.html', filelist = upload_fns.get_file_list(), feature_names = None)
 
+"""
 """
 @app.route('/train', methods=['POST', 'GET'])
 def train():

@@ -90,6 +90,20 @@ def train():
         column_headers = session['column_headers'], feature_names = session['feature_names'], \
         selected_label = session['selected_label'], label_options = session['label_options'])
 
+@app.route('/models')
+def models():
+    return "store trained models here"
+
+@app.route('/quality')
+def quality():
+    return "data quality assesment here"
+
+
+
+
+
+
+
 
 @app.route('/datadash_init')
 def dashboard_init():

@@ -96,7 +96,7 @@ def models():
 
 @app.route('/quality')
 def quality():
-    return "data quality assesment here"
+    return render_template('quality.html')
 
 
 

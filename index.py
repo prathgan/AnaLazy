@@ -92,7 +92,7 @@ def train():
 
 @app.route('/models')
 def models():
-    return "store trained models here"
+    return render_template('models.html')
 
 @app.route('/quality')
 def quality():

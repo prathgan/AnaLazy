@@ -109,13 +109,38 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Upload</h5>
-                <p class="card-text">
-                  Upload new data which models can be trained with. Data sets must be in <code>.csv</code> 
-                  format. All features and labels should each be a column of their own, with the first row of
-                  each column being a descriptive column header.
-                </p>
-              <a href="{{ url_for( 'upload') }}" class="btn btn-primary">Upload Data</a>
+              <h5 class="card-title">3. Choose Target</h5>
+              <form action="{{ url_for('train') }}" method="post">
+                <ul class="list-group list-group">
+                  {% for label_name in label_options %}
+                  <li class="list-group-item">
+                    {% if selected_label == None %}
+                      <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label">
+                        <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
+                      </div>
+                    {% else %}
+                      {% if label_name == selected_label %}
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label" checked>
+                          <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
+                        </div>
+                      {% else %}
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="{{label_name}}_label" name="{{label_name}}_label" value="{{label_name}}_label">
+                          <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  </li>
+                  {% endfor %}
+                </ul> <br>
+                {% if selected_label == None %}
+                  <button type="submit" name="label_submit" value="submit" class="btn btn-primary">set label</button>
+                {% else %}
+                  <button type="submit" name="label_submit" value="submit" class="btn btn-success">set label</button>
+                {% endif %}
+              </form>
             </div>
           </div>
         </div>

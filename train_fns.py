@@ -32,3 +32,6 @@ def select_features(request):
     session['feature_names'] = feature_names
     label_options = get_non_features(session['column_headers'], feature_names)
     session['label_options'] = label_options
+
+def get_non_features(column_headers, feature_names):
+	return list(set(column_headers) - set(feature_names))

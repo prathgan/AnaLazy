@@ -89,7 +89,6 @@ def train():
         selected_label = session['selected_label'], label_options = session['label_options'])
 
 """
-"""
 @app.route('/train', methods=['POST', 'GET'])
 def train():
     files = upload_fns.get_file_list()

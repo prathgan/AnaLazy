@@ -134,9 +134,7 @@ def train_dep():
         session['selected_label'] = train_fns.get_selected_label(request)
         pass
 
-    path = "uploads/"
-    files = [f for f in listdir(path) if isfile(join(path, f))]
-    files.remove('.DS_Store')
+    files = upload_fns.get_file_list()
 
     if not filechoice == None:
         if not filechoice[-3:]=='csv':

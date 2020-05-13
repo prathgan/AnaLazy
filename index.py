@@ -87,10 +87,6 @@ def train():
     return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
         column_headers = session['column_headers'], feature_names = session['feature_names'], \
         selected_label = session['selected_label'], label_options = session['label_options'])
-    """
-    except:
-        print("initial")
-        return render_template('train.html', filelist = upload_fns.get_file_list(), feature_names = None)
 
 """
 """

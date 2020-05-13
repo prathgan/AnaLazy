@@ -28,6 +28,7 @@ import utilities
 
 # import page-based functions
 import upload_fns
+import train_fns
 
 #import ML models
 from sklearn.neural_network import MLPClassifier

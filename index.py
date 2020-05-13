@@ -125,10 +125,7 @@ def train_dep():
         pass
 
     if request.form.get('features_submit') is not None:
-        feature_names = []
-        for feature_name in request.form.keys():
-            if feature_name != 'features_submit':
-                feature_names.append(feature_name)
+        feature_names = train_fns.get_feature_names(request)
         session['feature_names'] = feature_names
         label_options = get_non_features(session['column_headers'], feature_names)
         session['label_options'] = label_options

@@ -24,5 +24,5 @@ def get_selected_label(request):
 def select_features(request):
     feature_names = get_feature_names(request)
     session['feature_names'] = feature_names
-    label_options = helpers.get_non_features(session['column_headers'], feature_names)
+    label_options = get_non_features(session['column_headers'], feature_names)
     session['label_options'] = label_options

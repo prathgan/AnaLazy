@@ -66,8 +66,15 @@ def upload():
 
 @app.route('/train', methods=['POST', 'GET'])
 def train():
-    print(request.form)
-    print(session)
+    # print(request.form)
+    # print(session)
+    try:
+        if session['filechoice'] != None:
+            pass
+    except:
+        train_fns.init_vars()
+        return render_template('train.html', filelist=upload_fns.get_file_list(), feature_names = None, selected_label = None)
+
     if request.form.get('filechoice') != None:
         train_fns.process_filechoice(request)
 

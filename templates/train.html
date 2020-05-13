@@ -169,16 +169,42 @@
                           <label class="custom-control-label" for="{{label_name}}_label">{{label_name}}</label>
                         </div>
                       {% endif %}
-                    {% endif %}
-                  </li>
-                  {% endfor %}
-                </ul> <br>
-                {% if selected_label == None %}
-                  <button type="submit" name="label_submit" value="submit" class="btn btn-primary">set label</button>
-                {% else %}
-                  <button type="submit" name="label_submit" value="submit" class="btn btn-success">set label</button>
-                {% endif %}
-              </form>
+                    </li>
+                    <li class="list-group-item">
+                      {% if model_selection == 'Linear Support Vector Machine' %}
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="Linear Support Vector Machine" name="selection" value="Linear Support Vector Machine" checked>
+                          <label class="custom-control-label" for="Linear Support Vector Machine">Linear Support Vector Machine</label>
+                        </div>
+                      {% else %}
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="Linear Support Vector Machine" name="selection" value="Linear Support Vector Machine">
+                          <label class="custom-control-label" for="Linear Support Vector Machine">Linear Support Vector Machine</label>
+                        </div>
+                      {% endif %}
+                    </li>
+                  </ul> <br>
+                  {% if model_selection == None %}
+                    <button type="submit" name="model_submit" value="submit" class="btn btn-primary">select model</button>
+                  {% else %}
+                    <button type="submit" name="model_submit" value="submit" class="btn btn-primary">select model</button>
+                  {% endif %}
+                </form>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">5. Set Parameters</h5>
+              
             </div>
           </div>
         </div>

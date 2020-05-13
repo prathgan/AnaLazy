@@ -118,6 +118,11 @@ def train_dep():
         session['column_headers'] = None
 
     filechoice = request.form.get('filechoice')
+    try:
+        if filechoice != session['filechoice']:
+            session['label_options'] = None
+    except:
+        pass
 
     if request.form.get('features_submit') is not None:
         feature_names = []

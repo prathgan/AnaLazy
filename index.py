@@ -66,7 +66,7 @@ def upload():
 
 @app.route('/train', methods=['POST', 'GET'])
 def train():
-    # print(request.form)
+    print(request.form)
     # print(session)
     try:
         if session['filechoice'] != None:

@@ -13,6 +13,7 @@ def init_vars():
     session['selected_label'] = None
     session['label_options'] = None
     session['column_headers'] = None
+    session['filechoice'] = None
 
 def get_feature_names(request):
     feature_names = []

@@ -105,9 +105,17 @@ def train_dep():
     filepick = None
     warning = False
     column_headers = None
-    feature_names = session['feature_names']
-    label_options = session['label_options']
-    selected_label = session['selected_label']
+
+    try:
+        feature_names = session['feature_names']
+        label_options = session['label_options']
+        selected_label = session['selected_label']
+    except:
+        session['filechoice'] = None
+        session['feature_names'] = None
+        session['selected_label'] = None
+        session['label_options'] = None
+        session['column_headers'] = None
 
     filechoice = request.form.get('filechoice')
 

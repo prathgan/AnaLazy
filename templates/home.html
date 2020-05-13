@@ -44,7 +44,7 @@
                         <h5 class="card-title">Upload</h5>
                         <p class="card-text">
                             Upload new data which models can be trained with. Data sets must be in <code>.csv</code> 
-                            format. All features and labels should each be a column of their own, with the first row of
+                            format. All features and target variables should each be a column of their own, with the first row of
                             each column being a descriptive column header.
                         </p>
                         <a href="{{ url_for( 'upload') }}" class="btn btn-primary">Upload Data</a>
@@ -57,7 +57,7 @@
                         <h5 class="card-title">Train</h5>
                         <p class="card-text">
                             Train a new predictive model using uploaded data. You will be able 
-                            to select features and labels from the column headers of the data,
+                            to select features and target variables from the column headers of the data,
                             the specific model type you'd like to train and set all relevant parameters.
                         </p>
                         <a href="{{ url_for( 'train') }}" class="btn btn-primary">Train a Model</a>

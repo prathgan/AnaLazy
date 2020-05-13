@@ -90,23 +90,6 @@ def train():
         column_headers = session['column_headers'], feature_names = session['feature_names'], \
         selected_label = session['selected_label'], label_options = session['label_options'])
 
-"""
-@app.route('/train', methods=['POST', 'GET'])
-def train():
-    files = upload_fns.get_file_list()
-
-    try:
-        temp = session['filechoice']
-    except:
-        session['filechoice'] = None
-        session['feature_names'] = None
-        session['selected_label'] = None
-        session['label_options'] = None
-
-    filechoice = request.form.get('filechoice')
-
-    return render_template('train.html', filelist=files, filepick=filechoice)
-"""
 
 @app.route('/datadash_init')
 def dashboard_init():

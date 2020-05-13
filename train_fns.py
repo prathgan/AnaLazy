@@ -7,7 +7,12 @@ def process_filechoice(request):
     df = pandas.read_csv("uploads/"+session['filechoice'])
     session['df'] = df
     session['column_headers'] = list(df)
+
+def init_vars():
     session['feature_names'] = None
+    session['selected_label'] = None
+    session['label_options'] = None
+    session['column_headers'] = None
 
 def get_feature_names(request):
     feature_names = []

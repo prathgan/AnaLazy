@@ -96,8 +96,8 @@ def dashboard_init():
     session['label_options'] = None
     return render_template('dashboard.html', filelist = files)
 
-@app.route('/train', methods=['POST', 'GET'])
-def train():
+@app.route('/train_dep', methods=['POST', 'GET'])
+def train_dep():
 
     print(session)
 

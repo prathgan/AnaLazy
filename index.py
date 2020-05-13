@@ -64,6 +64,9 @@ def upload():
     files = upload_fns.get_file_list()
     return render_template('upload.html',filelist=files, warning=warning)
 
+@app.route('/train', methods=['POST', 'GET'])
+def train():
+
 """
 @app.route('/train', methods=['POST', 'GET'])
 def train():

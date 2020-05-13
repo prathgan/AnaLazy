@@ -81,9 +81,10 @@ def train():
     if request.form.get('features_submit') is not None:
         train_fns.select_features(request)
     
-    try:
-        return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
-        column_headers = session['column_headers'], feature_names = session['feature_names'])
+    return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
+        column_headers = session['column_headers'], feature_names = session['feature_names'], \
+        selected_label = session['selected_label'], label_options = session['label_options'])
+    """
     except:
         return render_template('train.html', filelist = upload_fns.get_file_list(), feature_names = None, column_headers=None)
 

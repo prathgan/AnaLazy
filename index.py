@@ -83,6 +83,8 @@ def train():
     
     if request.form.get('label_submit') is not None:
         session['selected_label'] = train_fns.get_selected_label(request)
+
+    
     
     return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
         column_headers = session['column_headers'], feature_names = session['feature_names'], \

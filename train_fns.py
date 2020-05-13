@@ -1,3 +1,14 @@
+from flask import session
+import pandas
+from helpers import get_non_features
+
+def process_filechoice(request):
+    session['filechoice'] = request.form.get('filechoice')
+    df = pandas.read_csv("uploads/"+session['filechoice'])
+    session['df'] = df
+    session['column_headers'] = list(df)
+    session['feature_names'] = None
+
 def get_feature_names(request):
     feature_names = []
     for feature_name in request.form.keys():

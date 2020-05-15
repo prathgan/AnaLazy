@@ -26,8 +26,7 @@ import data_quality.uniqueness
 import data_quality.utilities
 
 # import page-based functions
-from page_fns import upload_fns
-from page_fns import train_fns
+from page_fns import upload_fns, train_fns, models_fns
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 

@@ -29,10 +29,6 @@ import data_quality.utilities
 from page_fns import upload_fns
 from page_fns import train_fns
 
-#import ML models
-from sklearn.neural_network import MLPClassifier
-from sklearn.neural_network import MLPRegressor
-
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)

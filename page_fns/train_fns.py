@@ -60,7 +60,56 @@ def get_name(request):
             session['model_name'] = request.form.get(key)
 
 def train_model():
-    pass
+    clf = None
+    X = None
+    y = None
+
+    if session['model_selection'] == 'MLP Neural Network':
+        if (session['model_params']).get('MLP Type') == 'classification':
+            print("YAYAYAYAY WE GOT IT")
+            try:
+
+                clf = eval("MLPClassifier(solver='"+session['solver_type']+"', hidden_layer_sizes="+session['hidden_layer_sizes']+\
+                ", activation='"+session['activation_function']+"', alpha="+str(session['alpha'])+", batch_size='"+session['batch']+\
+                "', random_state="+session['random_state']+")")
+            
+                X = []
+                df = pandas.read_csv("uploads/"+session['filechoice'])
+                y = df[session['selected_label']].tolist()
+                for feature_name in session['feature_names']:
+                    X.append(df[feature_name].tolist())
+                X = list(zip(*X))
+
+                clf.fit(X,y)
+
+                
+
+            except Exception as e:
+                return e
+            
+            return None
+
+        if session['mlpnn_type'] == 'regression':
+            try:
+                clf = eval("MLPRegressor(solver='"+session['solver_type']+"', hidden_layer_sizes="+session['hidden_layer_sizes']+\
+                ", activation='"+session['activation_function']+"', alpha="+str(session['alpha'])+", batch_size='"+session['batch']+\
+                "', random_state="+session['random_state']+")")
+
+                X = []
+                df = pandas.read_csv("uploads/"+session['filechoice'])
+                y = df[session['selected_label']].tolist()
+                for feature_name in session['feature_names']:
+                    X.append(df[feature_name].tolist())
+                X = list(zip(*X))
+
+                clf.fit(X,y)
+
+                
+            
+            except Exception as e:
+                return e
+            
+            return None
 
 def run_in_parallel(*fns):
     proc = []

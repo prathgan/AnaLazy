@@ -36,3 +36,19 @@ def select_features(request):
 
 def get_non_features(column_headers, feature_names):
 	return list(set(column_headers) - set(feature_names))
+
+def get_model_selection(request):
+    for key in request.form.keys():
+        if not key == 'model_submit':
+            session['model_selection'] = request.form.get(key)
+
+def set_mlpnn_params(request):
+    mlpnn_type = request.form.get('mlpnn_type')
+    solver_type = request.form.get('solver_type')
+    hidden_layer_sizes = request.form.get('hidden_layer_sizes') if request.form.get('hidden_layer_sizes')!='' else "(100)"
+    activation_function = request.form.get('activation_function')
+    alpha = request.form.get('alpha') if request.form.get('alpha')!='' else 0.0001
+    batch = request.form.get('batch') if request.form.get('batch')!='' else "auto"
+    random_state = request.form.get('random_state') if request.form.get('random_state')!='' else "None"
+    session['model_params'] = {'MLP Type' : mlpnn_type, 'Solver' : solver_type, 'Hidden Layer Sizes' : hidden_layer_sizes,\
+        'Activation Function' : activation_function, 'Alpha' : alpha, 'Batch Size' : batch, 'Random State' : random_state}

@@ -68,58 +68,60 @@ def train_model(sess):
     X = None
     y = None
 
-    if session['model_selection'] == 'MLP Neural Network':
-        if (session['model_params']).get('MLP Type') == 'classification':
-            print("YAYAYAYAY WE GOT IT")
-            try:
+    # print('HEREERERERE!!!!----------')
+    # print(sess)
 
-                clf = eval("MLPClassifier(solver='"+session['solver_type']+"', hidden_layer_sizes="+session['hidden_layer_sizes']+\
-                ", activation='"+session['activation_function']+"', alpha="+str(session['alpha'])+", batch_size='"+session['batch']+\
-                "', random_state="+session['random_state']+")")
+    if sess['model_selection'] == 'MLP Neural Network':
+        # print("made it hereAHDKLJFHASKLDHFKSDHFU")
+        if (sess['model_params']).get('MLP Type') == 'classification':
+            print("point 1")
+            #try:
+            print("point 2")
+            clf = eval("MLPClassifier(solver='"+sess['model_params']['Solver']+"', hidden_layer_sizes="+sess['model_params']['Hidden Layer Sizes']+\
+            ", activation='"+sess['model_params']['Activation Function']+"', alpha="+str(sess['model_params']['Alpha'])+", batch_size='"+sess['model_params']['Batch Size']+\
+            "', random_state="+sess['model_params']['Random State']+")")
+        
+            X = []
+            df = pandas.read_csv("uploads/"+sess['filechoice'])
+            y = df[sess['selected_label']].tolist()
+            for feature_name in sess['feature_names']:
+                X.append(df[feature_name].tolist())
+            X = list(zip(*X))
+
+            clf.fit(X,y)
+
+            pickle.dump( clf, open( "models/" + sess['model_name'] + ".pickle", "wb" ) )
+
+            print("point 3")
+
+            """
+            except Exception as e:
+                print(e)
+                print("point 4")
+                return e
+            """
             
+            print("FINISHED")
+            return redirect(url_for('train_done'))
+
+        if sess['mlpnn_type'] == 'regression':
+            try:
+                clf = eval("MLPRegressor(solver='"+sess['solver_type']+"', hidden_layer_sizes="+sess['hidden_layer_sizes']+\
+                ", activation='"+sess['activation_function']+"', alpha="+str(sess['alpha'])+", batch_size='"+sess['batch']+\
+                "', random_state="+sess['random_state']+")")
+
                 X = []
-                df = pandas.read_csv("uploads/"+session['filechoice'])
-                y = df[session['selected_label']].tolist()
-                for feature_name in session['feature_names']:
+                df = pandas.read_csv("uploads/"+sess['filechoice'])
+                y = df[sess['selected_label']].tolist()
+                for feature_name in sess['feature_names']:
                     X.append(df[feature_name].tolist())
                 X = list(zip(*X))
 
                 clf.fit(X,y)
 
-                
-
-            except Exception as e:
-                return e
-            
-            return None
-
-        if session['mlpnn_type'] == 'regression':
-            try:
-                clf = eval("MLPRegressor(solver='"+session['solver_type']+"', hidden_layer_sizes="+session['hidden_layer_sizes']+\
-                ", activation='"+session['activation_function']+"', alpha="+str(session['alpha'])+", batch_size='"+session['batch']+\
-                "', random_state="+session['random_state']+")")
-
-                X = []
-                df = pandas.read_csv("uploads/"+session['filechoice'])
-                y = df[session['selected_label']].tolist()
-                for feature_name in session['feature_names']:
-                    X.append(df[feature_name].tolist())
-                X = list(zip(*X))
-
-                clf.fit(X,y)
-
-                
+                pickle.dump( clf, open( sess['model_name'] + ".p", "wb" ) )
             
             except Exception as e:
                 return e
             
             return None
-
-def run_in_parallel(*fns):
-    proc = []
-    for fn in fns:
-        p = Process(target=fn)
-        p.start()
-        proc.append(p)
-    for p in proc:
-        p.join()

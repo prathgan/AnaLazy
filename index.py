@@ -113,7 +113,9 @@ def train_done():
 
 @app.route('/models')
 def models():
-    return render_template('models.html')
+    models_list = models_fns.get_models_list()
+    print(models_list)
+    return render_template('models.html', models_list = models_list)
 
 @app.route('/quality')
 def quality():

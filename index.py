@@ -102,12 +102,6 @@ def training():
 
 
     return render_template('training.html', finished = False, model_name = session['model_name'], e = None)
-    
-    # while training:
-    # return render_template('training.html', finished = False, model_name = session['model_name'], e = None)
-
-    # after training:
-    # return render_template('training.html', finished = True, model_name = session['model_name'])
 
 @app.route('/train_err', methods=['POST', 'GET'])
 def train_err():

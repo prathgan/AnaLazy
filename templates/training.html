@@ -23,53 +23,11 @@
       </div>
     </div>
 
-    <div style="margin-left:30%;margin-right:30%"">
-        <center>
-            <h4>training parameter selections</h4>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Parameter Name</th>
-                    <th scope="col">Value</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {% if model_selection == 'MLP Neural Network' %}
-                        <tr>
-                            <th scope="row">Classifier Type</th>
-                            <td>{{ mlpnn_type }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Solver</th>
-                            <td>{{ solver_type }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Hiden Layer Sizes</th>
-                            <td>{{ hidden_layer_sizes }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Activation Function</th>
-                            <td>{{ activation_function }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Alpha</th>
-                            <td>{{ alpha }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Batch Size</th>
-                            <td>{{ batch }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Random State</th>
-                            <td>{{ random_state }}</td>
-                        </tr>
-                    {% endif %}
-                </tbody>
-            </table>
-            <br>
-            <button type="button" class="btn btn-info" onclick="window.location.href='{{ url_for( 'trainer') }}';">adjust training parameters</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='{{ url_for( 'in_progress') }}';">start training!</button>
-        </center>
+    <!-- Footer -->
+    <br>
+    <footer class="page-footer font-small blue pt-4">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://prathgan.github.io/"> Pratham Gandhi</a>
     </div>
 
 

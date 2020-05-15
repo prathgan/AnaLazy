@@ -250,17 +250,3 @@ def apply():
         prediction_result = list(zip(prediction_features_list, prediction_result))
 
     return render_template('apply.html', prediction_result = prediction_result)
-
-if __name__ == '__main__':
-    if 'web' in sys.argv:
-        if 'debug' in sys.argv:
-            app.run(debug=True)
-        else:
-            port = 5000
-            url = "http://127.0.0.1:{0}".format(port)
-            threading.Timer(1.25, lambda: webbrowser.open(url) ).start()
-            app.run(debug=False)
-    elif 'gui' in sys.argv:
-        init_gui(app, window_title="AnaLazy")
-    else:
-        init_gui(app, window_title="AnaLazy", width=1000, height=800)

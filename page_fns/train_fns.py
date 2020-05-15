@@ -63,7 +63,7 @@ def get_name(request):
         if not key == 'name_submit':
             session['model_name'] = request.form.get(key)
 
-def train_model():
+def train_model(sess):
     clf = None
     X = None
     y = None

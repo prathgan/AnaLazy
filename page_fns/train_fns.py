@@ -62,7 +62,7 @@ def get_name(request):
 def train_model():
     pass
 
-def runInParallel(*fns):
+def run_in_parallel(*fns):
     proc = []
     for fn in fns:
         p = Process(target=fn)

@@ -4,10 +4,17 @@ AnaLazy is a graphical web or desktop application which enables analysts to trai
 
 ## Installation
 
-Download the code from the [GitHub repository](https://github.com/prathgan/AnaLazy) and install all dependencies
+Download the code from the [GitHub repository](https://github.com/prathgan/AnaLazy) and install all dependencies by `cd`ing to AnaLazy's root directory and
 
 ```bash
 pip install -r requirements.txt
+```
+
+Then create internal directories for backend use
+
+```bash
+mkdir uploads
+mkdir models
 ```
 
 ## Usage

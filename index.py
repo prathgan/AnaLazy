@@ -127,6 +127,9 @@ def quality():
     return render_template('quality.html')
 
 
+@app.route('/status')
+def thread_status():
+    return jsonify(dict(status=('finished' if finished else 'running')))
 
 
 

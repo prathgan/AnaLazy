@@ -97,7 +97,11 @@ def train():
 def training():
     if request.form.get('name_submit') is not None:
         train_fns.get_name(request)
-    return render_template('training.html', finished = False, model_name = session['model_name'])
+    
+    # while training:
+    return render_template('training.html', finished = False, model_name = session['model_name'], e = None)
+
+    # after training:
     # return render_template('training.html', finished = True, model_name = session['model_name'])
 
 @app.route('/models')

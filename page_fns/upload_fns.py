@@ -6,7 +6,10 @@ import sys
 def get_file_list():
     path = "uploads/"
     files = [f for f in listdir(path) if isfile(join(path, f))]
-    files.remove('.DS_Store')
+    try:
+        files.remove('.DS_Store')
+    except:
+        pass
     return files
 
 def save_file(request, path):

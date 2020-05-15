@@ -53,3 +53,8 @@ def set_mlpnn_params(request):
     random_state = request.form.get('random_state') if request.form.get('random_state')!='' else "None"
     session['model_params'] = {'MLP Type' : mlpnn_type, 'Solver' : solver_type, 'Hidden Layer Sizes' : hidden_layer_sizes,\
         'Activation Function' : activation_function, 'Alpha' : alpha, 'Batch Size' : batch, 'Random State' : random_state}
+
+def get_name(request):
+    for key in request.form.keys():
+        if not key == 'name_submit':
+            session['model_name'] = request.form.get(key)

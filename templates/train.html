@@ -273,7 +273,27 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">6. Start Training</h5>
-              
+              Confirm training parameter selections:
+              <br> <br>
+              {% if model_params != None %}
+                <table class="table">
+                  <thead>
+                  <tr>
+                      <th scope="col">Parameter Name</th>
+                      <th scope="col">Value</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    {% for key, value in model_params.items() %}
+                      <tr>
+                        <th scope="row">{{ key }}</th>
+                        <td>{{ value }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                <a href="{{ url_for( 'training') }}" class="btn btn-warning">Start Training</a>
+              {% endif %}
             </div>
           </div>
         </div>

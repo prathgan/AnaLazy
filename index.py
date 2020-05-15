@@ -66,7 +66,7 @@ def train():
     # print(request.form)
     # print(session)
     try:
-        if session['filechoice'] != None:
+        if session['filechoice'] is not None:
             pass
     except:
         train_fns.init_vars()

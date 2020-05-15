@@ -292,7 +292,16 @@
                     {% endfor %}
                   </tbody>
                 </table>
-                <a href="{{ url_for( 'training') }}" class="btn btn-warning">Start Training</a>
+                <form action="{{ url_for('training') }}" method="post">
+                  <div class="form-group">
+                    <label for="model_name">Enter model name:</label>
+                    <input type="text" class="form-control" name="model_name">
+                  </div>
+                  <br>
+                  
+                  <button type="submit" name="name_submit" value="submit" class="btn btn-warning">Start Training</button>
+                  
+                </form>
               {% endif %}
             </div>
           </div>

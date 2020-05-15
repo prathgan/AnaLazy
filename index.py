@@ -110,6 +110,14 @@ def training():
     # after training:
     # return render_template('training.html', finished = True, model_name = session['model_name'])
 
+@app.route('/train_err', methods=['POST', 'GET'])
+def train_err():
+    pass
+
+@app.route('/train_done', methods=['POST', 'GET'])
+def train_done():
+    return render_template('training_done.html', finished = True, model_name = session['model_name'], e = None)
+
 @app.route('/models')
 def models():
     return render_template('models.html')

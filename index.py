@@ -108,38 +108,6 @@ def quality():
 
 
 
-#TODO: visual tracking of training progress
-@app.route('/trainer', methods=['POST', 'GET'])
-def trainer():
-
-    show_params_selection = False
-
-    if request.form.get('reselect_params') is not None:
-        show_params_selection = True
-
-    if request.form.get('model_submit') is not None:
-        for key in request.form.keys():
-            if not key == 'model_submit':
-                session['model_selection'] = request.form.get(key)
-
-    try:
-        model_selection = session['model_selection']
-    except:
-        session['model_selection'] = None
-    try:
-        params_selections = session['params_selections']
-    except:
-        session['params_selections'] = None
-    
-    if session['params_selections'] == None:
-        show_params_selection = True
-    feature_names = session['feature_names']
-    selected_label = session['selected_label']
-    
-    return render_template('trainer.html', feature_names = session['feature_names'],\
-        selected_label = session['selected_label'], model_selection = session['model_selection'],\
-        show_params_selection = True)
-
 @app.route('/training', methods=['POST', 'GET'])
 def training():
 

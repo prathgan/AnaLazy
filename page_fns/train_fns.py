@@ -10,7 +10,6 @@ from sklearn.neural_network import MLPRegressor
 def process_filechoice(request):
     session['filechoice'] = request.form.get('filechoice')
     df = pandas.read_csv("uploads/"+session['filechoice'])
-    session['df'] = df
     session['column_headers'] = list(df)
 
 def init_vars():

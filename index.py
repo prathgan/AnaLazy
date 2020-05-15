@@ -131,6 +131,13 @@ def quality():
 def thread_status():
     return jsonify(dict(status=('finished' if finished else 'running')))
 
+class Train_Model(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+        temp = {}
+        for key, item in session.items():
+            temp.update({key:item})
+        self.temp = temp
 
 
 

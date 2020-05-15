@@ -92,6 +92,14 @@ def train():
         selected_label = session['selected_label'], label_options = session['label_options'], \
         model_selection = session['model_selection'], model_params = session['model_params'])
 
+# TODO: add model name
+@app.route('/training', methods=['POST', 'GET'])
+def training():
+    if request.form.get('name_submit') is not None:
+        train_fns.get_name(request)
+    return render_template('training.html', finished = False, model_name = session['model_name'])
+    # return render_template('training.html', finished = True, model_name = session['model_name'])
+
 @app.route('/models')
 def models():
     return render_template('models.html')

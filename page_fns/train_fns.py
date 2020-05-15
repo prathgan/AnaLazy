@@ -68,15 +68,9 @@ def train_model(sess):
     X = None
     y = None
 
-    # print('HEREERERERE!!!!----------')
-    # print(sess)
-
     if sess['model_selection'] == 'MLP Neural Network':
-        # print("made it hereAHDKLJFHASKLDHFKSDHFU")
         if (sess['model_params']).get('MLP Type') == 'classification':
-            print("point 1")
             #try:
-            print("point 2")
             clf = eval("MLPClassifier(solver='"+sess['model_params']['Solver']+"', hidden_layer_sizes="+sess['model_params']['Hidden Layer Sizes']+\
             ", activation='"+sess['model_params']['Activation Function']+"', alpha="+str(sess['model_params']['Alpha'])+", batch_size='"+sess['model_params']['Batch Size']+\
             "', random_state="+sess['model_params']['Random State']+")")
@@ -92,16 +86,11 @@ def train_model(sess):
 
             pickle.dump( clf, open( "models/" + sess['model_name'] + ".pickle", "wb" ) )
 
-            print("point 3")
-
             """
             except Exception as e:
-                print(e)
-                print("point 4")
                 return e
             """
             
-            print("FINISHED")
             return redirect(url_for('train_done'))
 
         if sess['mlpnn_type'] == 'regression':

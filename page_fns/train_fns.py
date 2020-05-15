@@ -58,3 +58,7 @@ def get_name(request):
     for key in request.form.keys():
         if not key == 'name_submit':
             session['model_name'] = request.form.get(key)
+
+def train_model():
+    pass
+

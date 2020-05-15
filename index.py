@@ -116,8 +116,8 @@ def quality():
 
 
 
-@app.route('/training', methods=['POST', 'GET'])
-def training():
+@app.route('/trainingold', methods=['POST', 'GET'])
+def traininold():
 
     session['mlpnn_type'] = request.form.get('mlpnn_type')
     session['solver_type'] = request.form.get('solver_type')

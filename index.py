@@ -8,7 +8,7 @@ import sys
 
 import random, threading, webbrowser
 
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_session import Session
 from flask_dropzone import Dropzone
 

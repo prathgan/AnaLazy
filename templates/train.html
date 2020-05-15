@@ -209,6 +209,63 @@
               <h5 class="card-title">5. Set Parameters</h5>
               <form action="{{ url_for('train') }}" method="post">
               
+                {% if model_selection == 'MLP Neural Network' %}
+                  <div class="form-group">
+                    <label for="mlpnn_type">Select the MLP Neural Network's target application</label>
+                    <select class="form-control" id="mlpnn_type" name="mlpnn_type">
+                      <option name="classification">classification</option>
+                      <option name="regression">regression</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="solver_type">Select weight optimization solver</label>
+                    <select class="form-control" id="solver_type" name="solver_type">
+                      <option name="adam">adam</option>
+                      <option name="sgd">sgd</option>
+                      <option name="lbfgs">lbfgs</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="hidden_layer_sizes">Enter hidden layer sizes (tuple where ith element is number of neurons in ith layer)</label>
+                    <input type="text" class="form-control" name="hidden_layer_sizes" placeholder="100,">
+                  </div>
+                  <div class="form-group">
+                    <label for="activation_function">Select activation function for hidden layer</label>
+                    <select class="form-control" id="activation_function" name="activation_function">
+                      <option name="relu">relu</option>
+                      <option name="identity">identity</option>
+                      <option name="logistic">logistic</option>
+                      <option name="tanh">tanh</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="alpha">Enter alpha, L2 penalty (regularization term) parameter</label>
+                    <input type="text" class="form-control" name="alpha" placeholder="0.0001">
+                  </div>
+                  <div class="form-group">
+                    <label for="batch">Select batch size, size of minibatches for stochastic optimizers. If the solver is ‘lbfgs’, the classifier will not use minibatch. When set to “auto”, batch_size=min(200, n_samples)</label>
+                    <input type="text" class="form-control" name="batch" placeholder="auto">
+                  </div>
+                  <div class="form-group">
+                    <label for="random_state">Enter random state seed used by the random number generator</label>
+                    <input type="text" class="form-control" name="random_state" placeholder="None">
+                  </div>
+                {% elif model_selection == 'Linear Support Vector Machine'%}
+  
+  
+                {% endif %}
+  
+  
+                <br>
+
+                {% if model_params == None %}
+                  <button type="submit" name="params_submit" value="submit" class="btn btn-primary">set parameters</button>
+                {% else %}
+                  <button type="submit" name="params_submit" value="submit" class="btn btn-success">set parameters</button>
+                {% endif %}
+  
+                
+              </form>
             </div>
           </div>
         </div>

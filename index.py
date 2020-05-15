@@ -81,7 +81,11 @@ def train():
     if request.form.get('label_submit') is not None:
         session['selected_label'] = train_fns.get_selected_label(request)
 
-    
+    if request.form.get('model_submit') is not None:
+        train_fns.get_model_selection(request)
+
+    if request.form.get('mlpnn_type') is not None:
+        train_fns.set_mlpnn_params(request)
     
     return render_template('train.html', filelist = upload_fns.get_file_list(), filechoice=session['filechoice'],\
         column_headers = session['column_headers'], feature_names = session['feature_names'], \

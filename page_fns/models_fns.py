@@ -3,6 +3,9 @@ from os import listdir
 from os.path import isfile, join
 import sys
 
+from flask import session
+import pickle
+
 def get_models_list():
     path = "models/"
     files = [f for f in listdir(path) if isfile(join(path, f))]

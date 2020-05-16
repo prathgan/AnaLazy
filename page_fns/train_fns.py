@@ -83,6 +83,8 @@ def train_model(sess):
             X = list(zip(*X))
 
             clf.fit(X,y)
+            clf.feature_names = sess['feature_names']
+            clf.label_name = sess['selected_label']
 
             pickle.dump( clf, open( "models/" + sess['model_name'] + ".pickle", "wb" ) )
 

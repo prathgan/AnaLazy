@@ -93,26 +93,28 @@ def train_model(sess):
                 return e
             """
             
-            return redirect(url_for('train_done'))
+            return
 
         if sess['mlpnn_type'] == 'regression':
-            try:
-                clf = eval("MLPRegressor(solver='"+sess['solver_type']+"', hidden_layer_sizes="+sess['hidden_layer_sizes']+\
-                ", activation='"+sess['activation_function']+"', alpha="+str(sess['alpha'])+", batch_size='"+sess['batch']+\
-                "', random_state="+sess['random_state']+")")
+            # try:
+            clf = eval("MLPRegressor(solver='"+sess['solver_type']+"', hidden_layer_sizes="+sess['hidden_layer_sizes']+\
+            ", activation='"+sess['activation_function']+"', alpha="+str(sess['alpha'])+", batch_size='"+sess['batch']+\
+            "', random_state="+sess['random_state']+")")
 
-                X = []
-                df = pandas.read_csv("uploads/"+sess['filechoice'])
-                y = df[sess['selected_label']].tolist()
-                for feature_name in sess['feature_names']:
-                    X.append(df[feature_name].tolist())
-                X = list(zip(*X))
+            X = []
+            df = pandas.read_csv("uploads/"+sess['filechoice'])
+            y = df[sess['selected_label']].tolist()
+            for feature_name in sess['feature_names']:
+                X.append(df[feature_name].tolist())
+            X = list(zip(*X))
 
-                clf.fit(X,y)
+            clf.fit(X,y)
 
-                pickle.dump( clf, open( sess['model_name'] + ".p", "wb" ) )
-            
+            pickle.dump( clf, open( sess['model_name'] + ".p", "wb" ) )
+
+            """
             except Exception as e:
                 return e
+            """
             
-            return None
+            return

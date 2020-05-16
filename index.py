@@ -6,6 +6,8 @@ from os import listdir
 from os.path import isfile, join
 import sys
 
+import pickle
+
 import random, threading, webbrowser
 
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify

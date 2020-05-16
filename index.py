@@ -127,7 +127,7 @@ def models():
         return render_template('models.html', models_list = models_list, modelchoice = session['model_apply_choice'],\
             features = session['active_features'], label = session['active_label'], prediction = prediction)
     except:
-        return render_template('models.html', models_list = models_list)
+        return render_template('models.html', models_list = models_list, prediction = None)
 
 @app.route('/quality')
 def quality():

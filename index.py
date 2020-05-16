@@ -113,7 +113,8 @@ def train_err():
 def train_done():
     return render_template('training_done.html', finished = True, model_name = session['model_name'], e = None)
 
-@app.route('/models')
+# TODO: add delete model function
+@app.route('/models', methods=['POST', 'GET'])
 def models():
     models_list = models_fns.get_models_list()
     print(models_list)

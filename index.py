@@ -116,9 +116,18 @@ def train_done():
 # TODO: add delete model function
 @app.route('/models', methods=['POST', 'GET'])
 def models():
+    prediction = None
     models_list = models_fns.get_models_list()
-    print(models_list)
-    return render_template('models.html', models_list = models_list)
+    if request.form.get('filechoice') is not None:
+        models_fns.process_model_choice(request)
+    if request.form.get('apply_submit') is not None:
+        prediction = models_fns.make_prediction(request)
+
+    try:
+        return render_template('models.html', models_list = models_list, modelchoice = session['model_apply_choice'],\
+            features = session['active_features'], label = session['active_label'], prediction = prediction)
+    except:
+        return render_template('models.html', models_list = models_list)
 
 @app.route('/quality')
 def quality():

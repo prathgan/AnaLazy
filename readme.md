@@ -27,12 +27,12 @@ python index.py
 
 To run AnaLazy in the web configuration (webapp will automatically open in default browser)
 ```bash
-python index.py web
+python index.py --web
 ```
 
 To run AnaLazy in the debug web configuration (hot reloading, no automatic page opens on restart)
 ```bash
-python index.py web debug
+python index.py --web --debug
 ```
 
 ## Contributing

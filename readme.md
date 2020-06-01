@@ -36,9 +36,9 @@ Quality Analysis Page          |  Train Page
 :-------------------------:|:-------------------------:
 <img src="demo_images/quality_screenshot.png" alt="quality" width="200"/>  |  <img src="demo_images/train_screenshot.png" alt="train" width="200"/>
 
-Models Page          |    
+Models Page          |   a
 :-------------------------:|:-------------------------:
-<img src="demo_images/models_screenshot.png" alt="models" width="200"/>  |   
+<img src="demo_images/models_screenshot.png" alt="models" width="200"/>  |  a
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

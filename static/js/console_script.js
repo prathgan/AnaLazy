@@ -45,8 +45,17 @@ var newLine = "<br/> &nbsp;";
 var cmds = {
   
   "/run": function(a) {
-    console.log(a)
-    // load_csv function
+    var print = [];
+    print.push("Data Quality > command request sent > '" + a + "'");
+    jQuery.ajax({
+      url: '/qual_run',
+      data: {data: a},
+      success: function(data){
+        print.push("Returns:")
+        print.push(data)
+        output(print);
+      }
+    });
   },
 
   

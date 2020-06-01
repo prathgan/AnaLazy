@@ -183,10 +183,7 @@ if __name__ == '__main__':
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 #TODO: upload spreadsheet with unlabeled features and app labels them
-#TODO: use feature names to create a form that allows you to enter features next to feature names (table-type thing)
 @app.route('/apply', methods=['POST', 'GET'])
 def apply():
 

@@ -143,7 +143,9 @@ def qual_run():
     command = request.args['data']
     result = None
     try:
-        result = str(eval(command))
+        result = eval(command)
+        if result != None:
+            result = str(result)
     except:
         try:
             exec(command)

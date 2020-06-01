@@ -30,19 +30,15 @@ Use the `--web` flag to open app in default browser instead of as a standalone G
 ## Images
 Home Page           |  Upload Page
 :-------------------------:|:-------------------------:
-<img src="demo_images/home_screenshot.png" alt="home" width="200"/>  |  <img src="demo_images/upload_screenshot.png" alt="upload" width="200"/>
+<img src="demo_images/home_screenshot.png" alt="home" width="350"/>  |  <img src="demo_images/upload_screenshot.png" alt="upload" width="350"/>
 
 Quality Analysis Page          |  Train Page
 :-------------------------:|:-------------------------:
-<img src="demo_images/quality_screenshot.png" alt="quality" width="200"/>  |  <img src="demo_images/train_screenshot.png" alt="train" width="200"/>
-
-Models Page          |   a
-:-------------------------:|:-------------------------:
-<img src="demo_images/models_screenshot.png" alt="models" width="200"/>  |  a
+<img src="demo_images/quality_screenshot.png" alt="quality" width="350"/>  |  <img src="demo_images/train_screenshot.png" alt="train" width="350"/>
 
 | Models Page  |
 |-------------------------------|
-| <img src="demo_images/models_screenshot.png" alt="models" width="200"/> |
+| <img src="demo_images/models_screenshot.png" alt="models" width="350"/> |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

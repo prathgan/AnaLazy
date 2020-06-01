@@ -27,6 +27,9 @@ python index.py
 
 Use the `--web` flag to open app in default browser instead of as a standalone GUI and the `--debug` flag to enable hot reloading and disable automatic page opening on restart.
 
+## Images
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

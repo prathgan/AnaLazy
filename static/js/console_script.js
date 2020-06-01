@@ -20,10 +20,10 @@ jQuery('.console-input').click(function() {
 function output(print) {
   var cmd = jQuery('.console-input').val();
   if(cmd==""){cmd="<span style='opacity:0;'>...</span>";}
-  jQuery("#outputs").append("<span class='output-cmd-pre'>User ></span><span class='output-cmd'>" + cmd + "</span>");
+  jQuery("#outputs").append("<span class='output-cmd-pre'>In ></span><span class='output-cmd'>" + cmd + "</span>");
 
   jQuery.each(print, function(index, value) {
-    cmd = "Site";
+    cmd = "Out";
     cmd += " >";
     if (value == "") {
       value = "&nbsp;";

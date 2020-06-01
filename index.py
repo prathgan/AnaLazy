@@ -20,12 +20,12 @@ import pandas
 import sklearn
 
 # import data quality analysis functions
-import data_quality.accuracy
-import data_quality.completeness
-import data_quality.consistency
-import data_quality.currency
-import data_quality.uniqueness
-import data_quality.utilities
+from data_quality.accuracy import * 
+from data_quality.completeness import *
+from data_quality.consistency import *
+from data_quality.currency import *
+from data_quality.uniqueness import *
+from data_quality.utilities import *
 
 # import page-based functions
 from page_fns import upload_fns, train_fns, models_fns

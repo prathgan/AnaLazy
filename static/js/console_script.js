@@ -44,7 +44,8 @@ var newLine = "<br/> &nbsp;";
 // User Commands
 var cmds = {
   
-  "/load_csv": function() {
+  "/run": function(a) {
+    console.log(a)
     // load_csv function
   },
 

@@ -1,6 +1,6 @@
 # AnaLazy
 
-AnaLazy is a graphical web or desktop application which enables analysts to train a machine learning model off of a spreadsheet of training data and then make useful predictions, all without having to write a single line of code. 
+AnaLazy is a graphical web or desktop application which enables analysts to train a machine learning model off of a spreadsheet of training data and then make useful predictions, all without having to write a single line of code. AnaLazy also has a built-in data quality analysis tool to allow you to ensure your data is up to par before training a model with it.
 
 ## Installation
 

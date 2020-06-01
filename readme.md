@@ -28,6 +28,7 @@ python index.py
 Use the `--web` flag to open app in default browser instead of as a standalone GUI and the `--debug` flag to enable hot reloading and disable automatic page opening on restart.
 
 ## Images
+
 Home Page           |  Upload Page
 :-------------------------:|:-------------------------:
 <img src="demo_images/home_screenshot.png" alt="home" width="400"/>  |  <img src="demo_images/upload_screenshot.png" alt="upload" width="400"/>

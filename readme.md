@@ -25,15 +25,7 @@ To run AnaLazy in the standard configuration (GUI will automatically open)
 python index.py
 ```
 
-To run AnaLazy in the web configuration (webapp will automatically open in default browser)
-```bash
-python index.py --web
-```
-
-To run AnaLazy in the debug web configuration (hot reloading, no automatic page opens on restart)
-```bash
-python index.py --web --debug
-```
+Use the `--web` flag to open app in default browser instead of as a standalone GUI and the `--debug` flag to enable hot reloading and disable automatic page opening on restart.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

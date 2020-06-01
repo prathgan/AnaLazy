@@ -2,10 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/console_styling.css') }}">
+    
     <title>Data Quality</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+  <body id="particles-js">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="{{ url_for( 'home') }}">AnaLazy</a>
@@ -36,6 +39,21 @@
       <h1 class="display-4">Data Quality</h1>
     </div>
 
+
+    <body id="particles-js">
+      <style id="cmd-css">
+      </style>
+    <div class='console'>
+      <div class='console-inner'>
+        <div id="outputs">
+        </div>
+        <div class='console-prompt-box'>
+          <span class='console-label'>User ></span><input type="text" class='console-input' placeholder="Type command...">
+        </div>
+      </div>
+    </div>
+    </body>
+
     <!-- Footer -->
     <br>
     <footer class="page-footer font-small blue pt-4">
@@ -46,8 +64,9 @@
     <!-- Footer -->
 
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/console_script.js') }}"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>

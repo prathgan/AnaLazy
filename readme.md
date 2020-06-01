@@ -40,6 +40,10 @@ Models Page          |   a
 :-------------------------:|:-------------------------:
 <img src="demo_images/models_screenshot.png" alt="models" width="200"/>  |  a
 
+| Models Page  |
+|-------------------------------|
+| <img src="demo_images/models_screenshot.png" alt="models" width="200"/> |
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

@@ -22,7 +22,7 @@ idna==2.8
 imagesize==1.1.0
 isort==4.3.21
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 joblib==0.14.1
 keyboard==0.13.3
 kiwisolver==1.1.0
